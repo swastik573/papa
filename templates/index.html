@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Upload Excel Files</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+    <style>
+        body {
+            background-image: linear-gradient(to right, #757880, #caca89);
+            font-family: Arial, sans-serif;
+        }
+        form{
+            background-color: aliceblue;
+            max-width: 300px;
+            max-height: 300px;
+            margin: auto;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        }
+        input[type="file"] {
+            border: 1px solid #ccc;
+            padding: 10px;
+            margin-bottom: 10px;
+        }
+        input[type="submit"] {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            margin: auto;
+            display: block;
+            width: 90px;
+            cursor: pointer;
+            border-radius: 5px
+        }
+    </style>
+</head>
+<body >
+    <h1>Upload Excel Files</h1>
+    <form action="/uploads" method="post" enctype="multipart/form-data">
+        <label for="portal_file">PORTAL.xlsx:</label>
+        <input type="file" name="portal_file" id="portal_file" required><br><br>
+        <label for="books_file">BOOKS.xlsx:</label>
+        <input type="file" name="books_file" id="books_file" required><br><br>
+        <input type="submit" value="Upload">
+    </form>
+</body>
+</html>
